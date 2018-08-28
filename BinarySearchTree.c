@@ -87,6 +87,48 @@ void preorder(node *t)
 	}
 }
 
+/*void search(int x,node *t)	Search Without using Recursion
+{
+	while(t!=NULL)
+	{
+		if(t->data==x)
+		{
+			printf("\nThe Element Found!!");
+			return;
+		}
+		else if(x<=t->data)
+		{
+			t=t->left;
+		}
+		else
+		{
+			t=t->right;
+		}
+	}
+	printf("\nThe Element Not Found");
+}*/
+
+void search(int x,node *t) //Search Using Recursion
+{
+	if(t==NULL)
+	{
+		printf("\nThe Element Not Found");
+		return;
+	}
+	if(t->data==x)
+	{
+		printf("\nThe Element Found!!");
+		return;
+	}
+	else if(x<=t->data)
+	{
+		search(x,t->left);
+	}
+	else
+	{
+		search(x,t->right);
+	}
+}
 void main()
 {
 	int ch,x;
@@ -97,7 +139,7 @@ void main()
 	
 	do
 	{
-		printf("\n1.Insert New Node\n2.Inorder Traversal\n3.Preorder Traversal\n4.Exit");
+		printf("\n1.Insert New Node\n2.Inorder Traversal\n3.Preorder Traversal\n4.Search\n5.Exit");
 		printf("\nEnter your choice:");
 		scanf("%d",&ch);
 		switch(ch)
@@ -113,13 +155,17 @@ void main()
 					preorder(root);
 			break;
 			case 4:
+					printf("\nEnter the key value:");
+					scanf("%d",&x);
+					search(x,root);
 			break;
+			case 5:
 				printf("\nExiting....");
 			break;
 			default:
 				printf("\nInvalid Choice!!");
 				
 		}
-	}while(ch!=4);
+	}while(ch!=5);
 	
 }
