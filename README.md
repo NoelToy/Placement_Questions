@@ -9,4 +9,5 @@ Contact: noeltoy21@gmail.com
 4) Program to implememt Binary Search Tree and Traversal?  
 5) Program to implememt DFS  
 6) Program to implememt BFS  
-7) Program to check whether a numer is fascinating number or not?  
+7) Program to check whether a number is fascinating number or not?  
+8) Program to check whether a number is disarium number or not?  
